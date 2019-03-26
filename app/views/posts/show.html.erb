@@ -1,0 +1,13 @@
+<div class="container"> 
+    <div>
+    <% if @posts.length != 0 %>
+        <% @posts.each do |post| %>
+            <div class="list">
+                <p><%= link_to("#{post.content}" , "/posts/#{post.id}") %></p>
+            </div>
+        <% end %>
+    <% else%>
+        "No Post to display"
+    <% end %>
+    <div>
+</div>

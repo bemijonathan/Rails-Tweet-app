@@ -1,0 +1,21 @@
+// Place all the styles related to the index controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.Twi-header{
+    font-size:40px;
+    text-align: center;
+}
+.container{
+    background: teal;
+    min-height:400px;
+    color: white;
+    padding:20px;
+    h1{
+        font-size:20px;
+        text-align:center;
+        padding-top: 40px !important;
+        color: white;
+        font-weight:900;
+    }
+}

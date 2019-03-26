@@ -1,0 +1,6 @@
+<div class = "container">
+    <%= @post.content%>
+    <button class="button">
+        <%= link_to("Delete", "/posts/#{@post.id}/destroy", {method: "post"})%>
+    </button>
+</div>

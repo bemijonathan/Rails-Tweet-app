@@ -1,0 +1,15 @@
+<div class="container"> 
+    <div>
+    <% if @users.length != 0 %>
+        <% @users.each do |user| %>
+            <div class="list">
+                <%# <p><%= link_to("#{user.content}" , "/users/#{user.id}") %>
+                <%# </p> %>
+                <%= "#{user.name}" %>
+            </div>
+        <% end %>
+    <% else%>
+        "No user to display"
+    <% end %>
+    <div>
+</div>
