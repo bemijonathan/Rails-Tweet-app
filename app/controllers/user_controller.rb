@@ -1,5 +1,6 @@
 class UserController < ApplicationController
-    before_action :autheticate_user, {only: [:view]}
+    before_action :authenticate_user, { only: [:view]}
+
     def view
         @users = User.all
     end
@@ -10,12 +11,22 @@ class UserController < ApplicationController
         @user.name = params[:name]
         @user.email = params[:email]
         @user.password = params[:password]
-        @user.save
-        redirect_to("/")
+        if @user.save
+            session[:user_id] = @user.id
+            redirect_to("/")
+        else
+            flash[:notice] = @user.errors.full_messages
+            render("/user/signup")
+        end
     end
 
     def loginform
 
+    end
+
+    def logout
+        session[:user_id] = nil
+        redirect_to("/")
     end
 
     def login 

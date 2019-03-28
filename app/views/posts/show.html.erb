@@ -3,7 +3,9 @@
     <% if @posts.length != 0 %>
         <% @posts.each do |post| %>
             <div class="list">
-                <p><%= link_to("#{post.content}" , "/posts/#{post.id}") %></p>
+
+                <p><%= link_to("#{post.title}" , "/posts/#{post.id}") %></p>
+                <span> <%= link_to("#{post.content.slice(0, 30)}" , "/posts/#{post.id}")  %></span>
             </div>
         <% end %>
     <% else%>

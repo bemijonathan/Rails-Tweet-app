@@ -41,6 +41,11 @@ GEM
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
     arel (8.0.0)
+    awesome_print (1.8.0)
+    awesome_rails_console (0.4.3)
+      awesome_print
+      pry-rails
+      railties
     bindex (0.5.0)
     builder (3.2.3)
     bulma-rails (0.0.4.1)
@@ -55,6 +60,7 @@ GEM
       xpath (>= 2.0, < 4.0)
     childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
+    coderay (1.1.2)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0)
@@ -87,6 +93,11 @@ GEM
     nio4r (2.3.1)
     nokogiri (1.10.1-x86-mingw32)
       mini_portile2 (~> 2.4.0)
+    pry (0.12.2)
+      coderay (~> 1.1.0)
+      method_source (~> 0.9.0)
+    pry-rails (0.3.9)
+      pry (>= 0.10.4)
     public_suffix (3.0.3)
     puma (3.12.1)
     rack (2.0.6)
@@ -169,6 +180,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  awesome_rails_console
   bulma-rails (~> 0.0.4.1)
   byebug
   capybara (~> 2.13)

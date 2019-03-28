@@ -1,6 +1,11 @@
 <div class = "container">
     <%= form_tag("/posts/create") do%>
         <form>
+            <div class="field">
+            <div class="control">
+                <input class="input is-info" type="text" name="title">
+            </div>
+            </div>
             <textarea type="text" name="content"  class="textarea" placeholder="new posts" rows="10"> </textarea>
             <button class="button"> Submit </button>
         </form>

@@ -1,6 +1,36 @@
 <div class = "container">
-    <%= @post.content%>
+    <%= @post.title %><br>
+    <%= @post.content %>
+    <% if @post.user_id == session[:user_id] %>
     <button class="button">
         <%= link_to("Delete", "/posts/#{@post.id}/destroy", {method: "post"})%>
     </button>
+    
+    <% end %>
+    <br>
+    <br>
+    <br>
+    <br>
+    COMMENTS
+    <br>
+    <br>
+    <br>
+    <% @comment.each do |c|%>
+        <%= c.content %><br>
+
+        <% if c.user_id == session[:user_id] %>
+            <button class="button">
+                <%= link_to("Delete", "/comments/#{c.id}/destroy", {method: "post"})%>
+            </button>
+        <% end %>
+    <% end %>
+    <br>
+    <br>
+        ADD YOUR COMMENTS HERE
+     <%= form_tag("/comments/#{@post.id}") do%>
+        <form>
+            <textarea type="text" name="content"  class="textarea" placeholder="new posts" rows="10"> </textarea>
+            <button class="button"> Submit </button>
+        </form>
+    <% end %>
 </div>

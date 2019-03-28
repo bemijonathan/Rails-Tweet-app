@@ -9,6 +9,7 @@
   </head>
 
   <body>
+  
       <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <a class="navbar-item" href="/">
@@ -25,25 +26,33 @@
 
       <div class="navbar-end">
         <!-- navbar items -->
-        <a class="navbar-item button" href="/posts">
-          Posts
-        </a>
-        <a class="navbar-item button" href="/posts/new">
-          Add new
-        </a>
-        <a class="navbar-item button" href="/signup">
-          Signup
-        </a>
-        <a class="navbar-item button" href="/login">
-          Login
-        </a>
-        <a class="navbar-item button" href="/about">
-          About
-        </a>
-        
+        <% if @current_user %>
+          <a class="navbar-item button" href="/posts">
+            Posts
+          </a>
+          <a class="navbar-item button" href="/posts/new">
+            Add new
+          </a>
+          <a class="navbar-item button" href="/users">
+            Users
+          </a>
+          <%=link_to("LogOut", "/logout", {method: "post", class: "navbar-item button"})%>
+        <%else %>
+          <a class="navbar-item button" href="/signup">
+            Signup
+          </a>
+          <a class="navbar-item button" href="/login">
+            Login
+          </a>
+          <a class="navbar-item button" href="/about">
+            About
+          </a>
+        <% end %>
       </div>
+      
     </nav>
     
+
       <%= flash[:notice] %>
 
     
