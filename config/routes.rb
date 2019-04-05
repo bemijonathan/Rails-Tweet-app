@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get "/posts" => "posts#show"
   get "/signup" => "user#signup"
   get "/login" => "user#loginform"
+  get "chats/:id" => "chats#message"
   post "/comments/:id" => "comments#new"
   post "comments/:id/destroy" => "comments#destroy"
   post "/logout" => "user#logout"

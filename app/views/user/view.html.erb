@@ -7,6 +7,7 @@
                 <%# </p> %>
                 <%= "#{user.name}" %> <br>
                 <%= user.email %>
+                <%= link_to("Message", "/chats/#{user.id}")%>
             </div>
         <% end %>
     <% else%>
